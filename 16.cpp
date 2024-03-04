@@ -1,37 +1,40 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-int calcularSerieCollatz(int n) {
-    int terminos = 1;
-    while (n != 1) {
-        if (n % 2 == 0) {
-            n /= 2;
+int longitud_serie_collatz(long long semilla) {
+    int longitud = 1; // Comenzamos con la semilla misma
+
+    while (semilla != 1) {
+        if (semilla % 2 == 0) {
+            semilla /= 2;
         } else {
-            n = 3 * n + 1;
+            semilla = 3 * semilla + 1;
         }
-        terminos++;
+        longitud++;
     }
-    return terminos;
+
+    return longitud;
 }
 
 int main() {
-    int k;
+    long long k;
     cout << "Ingrese un numero k: ";
     cin >> k;
 
-    int semilla_maxima = 0;
-    int max_terminos = 0;
+    long long semilla_mas_larga = 0;
+    int longitud_mas_larga = 0;
 
-    for (int j = 1; j < k; ++j) {
-        int terminos = calcularSerieCollatz(j);
-        if (terminos > max_terminos) {
-            max_terminos = terminos;
-            semilla_maxima = j;
+    for (long long i = 1; i < k; ++i) {
+        int longitud = longitud_serie_collatz(i);
+        if (longitud > longitud_mas_larga) {
+            semilla_mas_larga = i;
+            longitud_mas_larga = longitud;
         }
     }
 
-    cout << "La serie mas larga es con la semilla: " << semilla_maxima << ", teniendo " << max_terminos << " terminos." << endl;
+    cout << "La serie mas larga es con la semilla: " << semilla_mas_larga << ", teniendo " << longitud_mas_larga << " terminos." << endl;
 
     return 0;
 }

@@ -3,19 +3,17 @@
 using namespace std;
 
 int main() {
-    int numero, suma = 0;
+    double N;
+    cout << "Ingrese el radio del circulo (N): ";
+    cin >> N;
 
-    cout << "Ingrese un numero entero N: ";
-    cin >> numero;
+    const double pi = 3.1416;
+    double perimetro = 2 * pi * N;
+    double area = pi * N * N;
 
-    while (numero > 0) {
-        int digito = numero % 10;
-        suma += digito;
-        suma += digito * digito;
-        numero /= 10;
-    }
-
-    cout << "El resultado de la suma es: " << suma << endl;
+    cout << "Perimetro: " << perimetro << endl;
+    cout << "Area: " << area << endl;
 
     return 0;
 }
+

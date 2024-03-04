@@ -2,34 +2,15 @@
 
 using namespace std;
 
-
-int mcd(int a, int b) {
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
-
-int mcmDeRango(int n) {
-    int mcm_resultado = 1;
-    for (int i = 2; i <= n; ++i) {
-        mcm_resultado = (mcm_resultado * i) / mcd(mcm_resultado, i);
-    }
-    return mcm_resultado;
-}
-
 int main() {
-    int numero;
+    int N;
+    cout << "Ingrese un numero N: ";
+    cin >> N;
 
-    cout << "Ingrese un numero: ";
-    cin >> numero;
-
-    int resultado = mcmDeRango(numero);
-
-    cout << "El minimo comun multiplo es: " << resultado << endl;
+    cout << "Tabla de multiplicar del " << N << ":" << endl;
+    for (int i = 1; i <= 10; ++i) {
+        cout << i << "x" << N << "=" << i * N << endl;
+    }
 
     return 0;
 }

@@ -3,37 +3,19 @@
 using namespace std;
 
 int main() {
-    int size;
+    int A, B;
+    cout << "Ingrese dos numeros A y B: ";
+    cin >> A >> B;
 
-    cout << "Ingrese el tama del patron (numero impar): ";
-    cin >> size;
+    int division = A / B;
+    int residuo = A % B;
 
 
-    if (size % 2 == 0) {
-        cout << "El numero ingresado no es impar." << endl;
-        return 0;
+    if (residuo >= B / 2) {
+        division++;
     }
 
-
-    for (int i = 0; i < size; ++i) {
-        for (int j = 0; j < size - i - 1; ++j) {
-            cout << " ";
-        }
-        for (int k = 0; k < 2 * i + 1; ++k) {
-            cout << "*";
-        }
-        cout << endl;
-    }
-
-    for (int i = size - 2; i >= 0; --i) {
-        for (int j = 0; j < size - i - 1; ++j) {
-            cout << " ";
-        }
-        for (int k = 0; k < 2 * i + 1; ++k) {
-            cout << "*";
-        }
-        cout << endl;
-    }
+    cout << A << "/" << B << "=" << division << endl;
 
     return 0;
 }

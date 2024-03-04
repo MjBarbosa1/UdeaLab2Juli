@@ -2,33 +2,18 @@
 
 using namespace std;
 
-int sumaParesFibonacciMenores(int n) {
-    int fib1 = 1;
-    int fib2 = 1;
-    int suma = 0;
-    int fib;
+int main() {
+    int N;
+    cout << "Ingrese un numero N: ";
+    cin >> N;
 
-    while (fib1 + fib2 < n) {
-        fib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = fib;
-        if (fib % 2 == 0) {
-            suma += fib;
-        }
+    int sumatoria = 0;
+
+    for (int i = 1; i <= N; ++i) {
+        sumatoria += i;
     }
 
-    return suma;
-}
-
-int main() {
-    int n;
-
-    cout << "Ingrese un numero n: ";
-    cin >> n;
-
-    int suma = sumaParesFibonacciMenores(n);
-
-    cout << "El resultado de la suma es: " << suma << endl;
+    cout << "La sumatoria desde 0 hasta " << N << " es: " << sumatoria << endl;
 
     return 0;
 }

@@ -2,32 +2,18 @@
 
 using namespace std;
 
-double calcularEuler(int n) {
-    double euler = 1.0;
-    double factorial = 1.0;
-
-    for (int i = 1; i <= n; ++i) {
-        factorial *= i;
-        euler += 1.0 / factorial;
-    }
-
-    return euler;
-}
-
 int main() {
-    int n;
+    int A, B;
+    cout << "Ingrese dos numeros A y B: ";
+    cin >> A >> B;
 
-    cout << "Ingrese el numero de terminos para la aproximacion de e: ";
-    cin >> n;
+    int resultado = 1;
 
-    if (n < 0) {
-        cout << "Error: El numero de terminos debe ser no negativo." << endl;
-        return 1;
+    for (int i = 0; i < B; ++i) {
+        resultado *= A;
     }
 
-    double euler = calcularEuler(n);
-
-    cout << "e es aproximadamente: " << euler << endl;
+    cout << A << "^" << B << "=" << resultado << endl;
 
     return 0;
 }

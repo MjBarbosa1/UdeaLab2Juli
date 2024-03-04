@@ -2,27 +2,18 @@
 
 using namespace std;
 
-int sumaMultiplosMenores(int a, int b, int c) {
-    int suma = 0;
+int main() {
+    int N;
+    cout << "Ingrese un numero N: ";
+    cin >> N;
 
-    for (int i = 1; i < c; ++i) {
-        if (i % a == 0 || i % b == 0) {
-            suma += i;
-        }
+    int factorial = 1;
+
+    for (int i = 1; i <= N; ++i) {
+        factorial *= i;
     }
 
-    return suma;
-}
-
-int main() {
-    int a, b, c;
-
-    cout << "Ingrese tres numeros a, b y c: ";
-    cin >> a >> b >> c;
-
-    int suma = sumaMultiplosMenores(a, b, c);
-
-    cout << "La suma de los multiplos de " << a << " y " << b << " menores que " << c << " es: " << suma << endl;
+    cout << N << "!=" << factorial << endl;
 
     return 0;
 }

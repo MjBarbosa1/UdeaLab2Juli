@@ -4,22 +4,27 @@ using namespace std;
 
 int main() {
     int n;
-    cout << "Ingrese un numero impar n para la espiral: ";
+    cout << "Ingrese un numero impar n para la espiral nxn: ";
     cin >> n;
 
-    int suma_diagonal = 1;
-    int incremento = 2;
-    int actual = 1;
-
-    for (int i = 3; i <= n; i += 2) {
-        for (int j = 0; j < 4; ++j) {
-            actual += incremento;
-            suma_diagonal += actual;
-        }
-        incremento += 2;
+    // Verificamos que n sea impar
+    if (n % 2 == 0) {
+        cout << "El numero ingresado no es impar." << endl;
+        return 1;
     }
 
-    cout << "En una espiral de " << n << "x" << n << ", la suma es: " << suma_diagonal << "." << endl;
+    int suma = 1; // Comenzamos con 1 en el centro de la espiral
+
+    for (int capa = 3; capa <= n; capa += 2) {
+        int esquina_superior_derecha = capa * capa;
+        int esquina_superior_izquierda = esquina_superior_derecha - (capa - 1);
+        int esquina_inferior_izquierda = esquina_superior_izquierda - (capa - 1);
+        int esquina_inferior_derecha = esquina_inferior_izquierda - (capa - 1);
+
+        suma += esquina_superior_derecha + esquina_superior_izquierda + esquina_inferior_izquierda + esquina_inferior_derecha;
+    }
+
+    cout << "En una espiral de " << n << "x" << n << ", la suma es: " << suma << endl;
 
     return 0;
 }
