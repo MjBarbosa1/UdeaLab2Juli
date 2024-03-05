@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+int ejercicio9() {
     double N;
     cout << "Ingrese el radio del circulo (N): ";
     cin >> N;

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+int ejercicio15() {
     int n;
     cout << "Ingrese un numero impar n para la espiral nxn: ";
     cin >> n;

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+int ejercicio14() {
     int inicio = 1;
     int fin = 50;
 

@@ -21,3 +21,6 @@ SOURCES += \
         7.cpp \
         8.cpp \
         9.cpp
+
+HEADERS += \
+    ejrciios.h

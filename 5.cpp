@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+int ejercicio5() {
     int A, B;
     cout << "Ingrese dos numeros A y B: ";
     cin >> A >> B;

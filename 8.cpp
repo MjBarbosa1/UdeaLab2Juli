@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+int ejercicio8() {
     int N;
     cout << "Ingrese un numero N: ";
     cin >> N;
